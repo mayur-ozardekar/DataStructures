@@ -1,4 +1,4 @@
-package com.study.java.solution;
+package com.study.ds.solution;
 
 /**
  * Unique Paths II
@@ -38,7 +38,7 @@ public class Solution9 {
                             {0,0,0}
                         };
 
-        uniquePathsWithObstacles(array);
+        System.out.println(uniquePathsWithObstacles(array));
     }
 
     public static int uniquePathsWithObstacles(int[][] obstacleGrid) {

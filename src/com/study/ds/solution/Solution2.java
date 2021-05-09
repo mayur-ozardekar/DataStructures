@@ -1,4 +1,4 @@
-package com.study.java.solution;
+package com.study.ds.solution;
 
 import java.util.HashMap;
 import java.util.Map;

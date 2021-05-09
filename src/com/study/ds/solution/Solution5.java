@@ -1,4 +1,4 @@
-package com.study.java.solution;
+package com.study.ds.solution;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +20,7 @@ public class Solution5 {
         }
     }
 
-    public static boolean esPosible(int U, int L, int[] c) {
+    public static boolean isPossible(int U, int L, int[] c) {
         for (int i = 0; i < c.length; i++) {
             if (c[i] == 2) {
                 L--;
@@ -43,9 +43,9 @@ public class Solution5 {
     }
 
     public String solution_II(int U, int L, int[] c) {
-        boolean posible = esPosible(U, L, c);
+        boolean possible = isPossible(U, L, c);
         String res = "IMPOSSIBLE";
-        if (posible) {
+        if (possible) {
             String res1 = "", res2 = "";
             for (int i = 0; i < c.length; i++) {
                 if (c[i] == 0) {
