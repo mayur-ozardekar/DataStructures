@@ -1,9 +1,11 @@
 package com.study.ds.solution;
 
+import java.util.Arrays;
+
 /**
  * Unique Paths II
  *
- * {@link https://leetcode.com/problems/unique-paths-ii/}
+ * {https://leetcode.com/problems/unique-paths-ii/}
  *
  * A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
  *
@@ -62,6 +64,8 @@ public class Solution9 {
             } else
                 break;
         }
+
+        System.out.println(Arrays.deepToString(dp));
 
         for(int i = 1; i < m; i ++){
             for(int j = 1; j < n; j ++){
