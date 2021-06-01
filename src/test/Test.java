@@ -1,5 +1,7 @@
 package test;
 
+import java.util.Arrays;
+
 public class Test {
 
     static int fun(int A, int B){
@@ -44,6 +46,15 @@ public class Test {
         for (int j = 1; j < 6; j++) {
             System.out.print(printTribRec(j) + " ");
         }
+
+        System.out.println();
+
+        int[] newArray = new int[10];
+        Arrays.fill(newArray, -1);
+        int[] copy = Arrays.copyOf(newArray, 8);
+
+        System.out.println(Arrays.toString(newArray));
+        System.out.println(Arrays.toString(copy));
     }
 
 }
