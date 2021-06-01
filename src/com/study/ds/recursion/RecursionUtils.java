@@ -35,6 +35,8 @@ public class RecursionUtils {
      * S is a balanced parentheses string, containing only ( and ).
      * 2 <= S.length <= 50
      *
+     * // DEMO TEST BRANCHING
+     *
      */
     int i = 0;
     public int scoreOfParentheses(String S) {
