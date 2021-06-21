@@ -14,26 +14,28 @@ public class GraphMain {
         graph.addEdge("B", "D");
         graph.addEdge("D", "C");
         //graph.traverseDepthFirstRecursive("A");
-        graph.traverseDepthFirstIterative("G");
+        // graph.traverseDepthFirstIterative("A");
         graph.traverseBredthFirst("G");
-        graph.print();
+        //graph.print();
+
+        graph.topologicalSort();
 
 
-        graph = new Graph();
-        graph.addNode("X");
-        graph.addNode("A");
-        graph.addNode("B");
-        graph.addNode("P");
-
-        graph.addEdge("X", "A");
-        graph.addEdge("X", "B");
-        graph.addEdge("X", "P");
-        graph.addEdge("X", "P");
+//        graph = new Graph();
+//        graph.addNode("X");
+//        graph.addNode("A");
+//        graph.addNode("B");
+//        graph.addNode("P");
+//
+//        graph.addEdge("X", "A");
+//        graph.addEdge("X", "B");
+//        graph.addEdge("X", "P");
+//        graph.addEdge("X", "P");
 
         //graph.topologicalSort();
 
 
-        graph = new Graph();
+        /*graph = new Graph();
         graph.addNode("Pete");
         graph.addNode("Barbara");
         graph.addNode("Nick");
@@ -59,6 +61,8 @@ public class GraphMain {
         System.out.println("-----");
         graph.traverseDepthFirstRecursive("Pete");
         // System.out.println("-----");
-        // graph.traverseBredthFirst("Sophie");
+        // graph.traverseBredthFirst("Sophie");*/
     }
+
+
 }

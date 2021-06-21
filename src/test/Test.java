@@ -1,6 +1,8 @@
 package test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Test {
 
@@ -55,6 +57,8 @@ public class Test {
 
         System.out.println(Arrays.toString(newArray));
         System.out.println(Arrays.toString(copy));
+
+        List<Integer> data = new ArrayList<>(100);
     }
 
 }
