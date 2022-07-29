@@ -186,7 +186,7 @@ public class StringUtils {
         return count;
     }
 
-    private String replaceOccurance(String text, String replaceFrom, String replaceTo, int occuranceIndex)
+    private String replaceOccurrence(String text, String replaceFrom, String replaceTo, int occurrenceIndex)
     {
         StringBuffer sb = new StringBuffer();
         Pattern p = Pattern.compile(replaceFrom);
@@ -194,7 +194,7 @@ public class StringUtils {
         int count = 0;
         while (m.find())
         {
-            if (count++ == occuranceIndex - 1)
+            if (count++ == occurrenceIndex - 1)
             {
                 m.appendReplacement(sb, replaceTo);
             }
@@ -206,5 +206,35 @@ public class StringUtils {
     private static boolean isAnagram(String a, String b){
 
         return false;
+    }
+
+    public static String combineStringsWithSum(String a, String b){
+
+        int sizeA = a.length();
+        int sizeB = b.length();
+
+        int startIndex = Math.max(sizeA, sizeB);
+
+        StringBuilder sum = new StringBuilder();
+
+        if(sizeA > sizeB){
+            while(startIndex != sizeB){
+                sum.append(a.charAt(startIndex - 1));
+                startIndex --;
+            }
+        } else {
+            while(startIndex != sizeA){
+                sum.append(b.charAt(startIndex - 1));
+                startIndex --;
+            }
+        }
+
+        for (int i = 0; i < startIndex; i++) {
+            int localSum = Integer.parseInt(String.valueOf(a.charAt(i))) + Integer.parseInt(String.valueOf(b.charAt(i)));
+            sum.append(localSum);
+        }
+
+        return sum.toString();
+
     }
 }

@@ -1,6 +1,6 @@
 package com.study.ds.recursion;
 
-import java.util.Stack;
+import java.util.*;
 
 public class RecursionUtils {
     /**
@@ -102,6 +102,58 @@ public class RecursionUtils {
         }
 
         return result;
+    }
+
+    private Map<String, String> ds = new HashMap<>();
+
+    public List<String> letterCombinations(String A) { // 23
+
+        ds.put("2", "abc");
+        ds.put("3", "def");
+
+        List<String> result = new ArrayList<>();
+
+        letterCombinationsHelper(A, "", 0, result, ds);
+
+        return result;
+
+    }
+
+    public void letterCombinationsHelper(String digits, String slate, int index, List<String> result, Map<String, String> ds) {
+
+        // Base case or exit condition
+        if(index == digits.length()) {
+            result.add(slate);
+            return;
+        }
+
+        String letters = ds.get(String.valueOf(digits.charAt(index)));
+
+        for(int i=0; i< letters.length() - 1; i++) {
+            letterCombinationsHelper(digits,  slate + letters.charAt(i), index+1, result, ds);
+        }
+
+    }
+
+    public int wordBreak(String A, ArrayList<String> B) {
+        return wordBreakHelper(A, 0, new HashSet<>(B));
+    }
+
+    public int wordBreakHelper(String A, int start, Set<String> dict) {
+
+        if(start == A.length()) return 1;
+
+        for(int end = start+1; end<=A.length(); end++) {
+
+            if((dict.contains(A.substring(start,end)))
+                    && (wordBreakHelper(A,end, dict)) ==1) {
+                return 1;
+            }
+
+        }
+
+        return 0;
+
     }
 
 }

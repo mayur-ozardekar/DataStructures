@@ -76,7 +76,26 @@ public class Solution14 {
         return minCost;
     }
 
+    public static int findMinCostChain(int[] A){
+        int aP = Integer.MAX_VALUE;
+        int aQ = Integer.MAX_VALUE;
+
+        for (int i = 1; i< A.length - 1; i ++){
+            if(A[i] < aP){
+                aQ = aP;
+                aP = A[i];
+            }
+
+            if(A[i + 1] >= aP && A[i + 1] < aQ){
+                aQ = A[i + 1];
+            }
+
+        }
+
+        return aP + aQ;
+    }
+
     public static void main(String[] args) {
-        System.out.println(solution(new int[]{5, 2, 4, 6, 3}));
+        System.out.println(solution(new int[]{5, 4, 2, 6, 3, 7}));
     }
 }
